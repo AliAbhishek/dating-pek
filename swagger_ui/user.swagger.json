@@ -1,0 +1,1283 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Peek Documentation",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://192.168.0.121:4060",
+            "description": "local Server"
+        },
+        {
+            "url": "https://peek-api.bosselt.com/",
+            "description": "live Server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Registration",
+            "description": "User Registration related apis"
+        },
+        {
+            "name": "Home flow",
+            "description": "Home related apis"
+        },
+        {
+            "name": "Messages",
+            "description": "Messages related apis"
+        }
+    ],
+    "paths": {
+        "/api/user/login": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/login"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                }
+            }
+        },
+        "/api/user/registration": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/register"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                }
+            }
+        },
+        "/api/user/verifyOtp": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/verifyOtp"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                }
+            }
+        },
+        "/api/user/resendOtp": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/resendOtp"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                }
+            }
+        },
+        "/api/user/forgetPassword": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/forgetPassword"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                }
+            }
+        },
+        "/api/user/resetPassword": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/resetPassword"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                }
+            }
+        },
+        "/api/user/changePassword": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/changePassword"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                }
+            }
+        },
+        "/api/user/editProfile": {
+            "put": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/editProfile"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/deleteUser": {
+            "put": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/deleteUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/logout": {
+            "put": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/logout"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/deleteImage": {
+            "delete": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/deleteImage"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/getUserProfile": {
+            "get": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/emailVerify": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/phoneOtpVerify": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/userListing": {
+            "get": {
+                "tags": [
+                    "Home flow"
+                ],
+                "summary": "",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/minAge"
+                    },
+                    {
+                        "$ref": "#/components/parameters/maxAge"
+                    },
+                    {
+                        "$ref": "#/components/parameters/minHeight"
+                    },
+                    {
+                        "$ref": "#/components/parameters/maxHeight"
+                    },
+                    {
+                        "$ref": "#/components/parameters/lookingFor"
+                    },
+                    {
+                        "$ref": "#/components/parameters/preference"
+                    },
+                    {
+                        "$ref": "#/components/parameters/interest"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/likeDislike": {
+            "post": {
+                "tags": [
+                    "Home flow"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/likeDislike"
+                            }
+                        }
+                    }
+                },
+               
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/api/user/report": {
+            "post": {
+                "tags": [
+                    "Home flow"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/report"
+                            }
+                        }
+                    }
+                },
+               
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/user/matchList": {
+            "get": {
+                "tags": [
+                    "Home flow"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/user/likeList": {
+            "get": {
+                "tags": [
+                    "Home flow"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/user/superLikeList": {
+            "get": {
+                "tags": [
+                    "Home flow"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/chat/accessChat": {
+            "post": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/accessChat"
+                            }
+                        }
+                    }
+                },
+               
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/chat/fetchChat": {
+            "get": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/message/sendMessage": {
+            "post": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/sendMessage"
+                            }
+                        }
+                    }
+                },
+               
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/chat/getAllMessage": {
+            "get": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "api/chat/deleteChat": {
+            "delete": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid input, validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized - Authentication failure"
+                    },
+                    "500": {
+                        "description": "Internal server error - Something went wrong on the server side"
+                    }
+                },
+                "security": [
+                    {
+                        "access_token": [
+                            "access_token"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "register": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Enter Name"
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "Enter Country Code"
+                    },
+                    "phoneNumber": {
+                        "type": "number",
+                        "description": "Enter Phone Number"
+                    },
+                    "email": {
+                        "description": "Enter your Email",
+                        "type": "string",
+                        "format": "email",
+                        "default": "abc@yopmail.com"
+                    },
+                    "password": {
+                        "description": "Enter your Password",
+                        "type": "string"
+                    },
+                    "device_token": {
+                        "description": "Enter device token",
+                        "type": "string"
+                    },
+                    "device_type": {
+                        "description": "0:Web; 1:Android; 2:iOS; 3:default",
+                        "type": "number"
+                    },
+                    "device_model": {
+                        "description": "OS-browser name for web; DEVICE-model for mobile apps",
+                        "type": "string"
+                    }
+                }
+            },
+            "verifyOtp": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "description": "Enter Id",
+                        "type": "string"
+                    },
+                    "otp": {
+                        "description": "Enter Otp",
+                        "type": "number"
+                    },
+                    "type": {
+                        "description": "1 for number verification",
+                        "type": "number"
+                    }
+                }
+            },
+            "resendOtp": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "description": "Enter your Id",
+                        "type": "string"
+                    }
+                }
+            },
+            "login": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "Enter your Email",
+                        "type": "string",
+                        "format": "email",
+                        "default": "abc@yopmail.com"
+                    },
+                    "password": {
+                        "description": "Enter your Password",
+                        "type": "string"
+                    },
+                    "device_token": {
+                        "description": "Enter device token",
+                        "type": "string"
+                    },
+                    "device_type": {
+                        "description": "0:Web; 1:Android; 2:iOS; 3:default",
+                        "type": "number"
+                    },
+                    "device_model": {
+                        "description": "OS-browser name for web; DEVICE-model for mobile apps",
+                        "type": "string"
+                    }
+                }
+            },
+            "updateProfile": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "string",
+                        "description": "Enter UserId"
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "description": "Enter First Name"
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "description": "Enter Last Name"
+                    },
+                    "country_code": {
+                        "type": "string",
+                        "description": "Enter Country Code"
+                    },
+                    "phone_number": {
+                        "type": "number",
+                        "description": "Enter Phone Number"
+                    }
+                }
+            },
+            "forgetPassword": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "Enter email",
+                        "type": "string"
+                    }
+                }
+            },
+            "resetPassword": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "description": "Enter your userId",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "Enter your Password",
+                        "type": "string"
+                    }
+                }
+            },
+            "changePassword": {
+                "type": "object",
+                "properties": {
+                    "oldpassword": {
+                        "description": "Enter Old Password",
+                        "type": "string"
+                    },
+                    "newpassword": {
+                        "description": "Enter New Password",
+                        "type": "string"
+                    }
+                }
+            },
+            "editProfile": {
+                "type": "object",
+                "properties": {
+                    "lat": {
+                        "description": "Enter latitude",
+                        "type": "number"
+                    },
+                    "lan": {
+                        "description": "Enter longitude",
+                        "type": "number"
+                    },
+                    "dob": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "User's date of birth"
+                    },
+                    "height": {
+                        "type": "number",
+                        "description": "User's height"
+                    },
+                    "gender": {
+                        "type": "number",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "description": "1-male; 2-female; 3-other"
+                    },
+                    "preference": {
+                        "type": "number",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "description": "1-men; 2-women; 3-everyone"
+                    },
+                    "lookingFor": {
+                        "type": "number",
+                        "enum": [
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        "description": "1-relationship; 2-something casual; 3-not sure; 4-prefer not to say"
+                    },
+                    "occupation": {
+                        "type": "number",
+                        "enum": [
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        "description": "1-Student; 2-Unemployed; 3-Employed; 4-Self Employed"
+                    },
+                    "designation": {
+                        "type": "string",
+                        "description": "User's job designation"
+                    },
+                    "highestQualification": {
+                        "type": "number",
+                        "enum": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "description": "1-High School; 2-Undergraduate; 3-Graduate; 4-Postgraduate; 5-Doctorate"
+                    },
+                    "interest": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Array of user's interests"
+                    },
+                    "images": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "binary"
+                        },
+                        "description": "Array of user's image URLs"
+                    },
+                    "coverImage": {
+                        "type": "string"
+                    },
+                    "about": {
+                        "type": "string",
+                        "description": "User's bio or about section"
+                    },
+                    "subscriptionPlan": {
+                        "type": "string",
+                        "description": "User's subscription plan"
+                    }
+                }
+            },
+            "deleteUser": {
+                "type": "object"
+            },
+            "logout": {
+                "type": "object"
+            },
+            "getUserProfile": {
+                "type": "object"
+            },
+            "deleteImage": {
+                "type": "object",
+                "properties": {
+                    "imageName": {
+                        "description": "enter imagename",
+                        "type": "string"
+                    }
+                }
+            },
+            "likeDislike": {
+                "type": "object",
+                "properties": {
+                    "likedTo": {
+                        "description": "userid whom you want to like",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "1-like,2-dislike",
+                        "type": "Number"
+                    }
+                }
+            },
+            "report": {
+                "type": "object",
+                "properties": {
+                    "reportUserId": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "reason": {
+                        "description": "1=No Real Connections , 2=Feeling Overwhelmed, 3=Bad Experiences, 4=Focusing on Themselves, 5=Found Someone",
+                        "type": "Number"
+                    },
+                    "description": {
+                        "description": "description",
+                        "type": "String"
+                    }
+                }
+            },
+            "accessChat": {
+                "type": "object",
+                "properties": {
+                    "chatWithUser": {
+                        "description": "User id",
+                        "type": "string"
+                    }
+                   
+                }
+            },
+            "sendMessage":{
+                "type": "object",
+                "properties": {
+                    "chat": {
+                        "description": "User Id",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "content",
+                        "type": "string"
+                    }
+
+                   
+                }
+
+            }
+
+           
+        },
+        "parameters": {
+            "minAge": {
+                "name": "minAge",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "number"
+                },
+                "style": "form",
+                "explode": true
+            },
+            "maxAge": {
+                "name": "maxAge",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "number"
+                },
+                "style": "form",
+                "explode": true
+            },
+            "minHeight": {
+                "name": "minHeight",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "number"
+                },
+                "style": "form",
+                "explode": true
+            },
+            "maxHeight": {
+                "name": "maxHeight",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "number"
+                },
+                "style": "form",
+                "explode": true
+            },
+            "lookingFor": {
+                "name": "lookingFor",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "number"
+                },
+                "style": "form",
+                "explode": true
+            },
+            "preference": {
+                "name": "preference",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "number"
+                },
+                "style": "form",
+                "explode": true
+            },
+            "interest": {
+                "name": "interest",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                },
+                "style": "form",
+                "explode": true
+            }
+        },
+        "securitySchemes": {
+            "access_token": {
+                "type": "apiKey",
+                "name": "authorization",
+                "in": "header"
+            }
+        }
+    }
+}
